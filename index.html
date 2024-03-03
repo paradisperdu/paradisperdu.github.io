@@ -115,7 +115,7 @@
     <div class="section-container">
         <h2>Devenez Partenaire</h2>
         <p>Si vous êtes intéressé par un partenariat avec Paradis Perdu, contactez-nous à l'adresse suivante : <a href="mailto:perduparadis@gmail.com" class="partner-link">perduparadis@gmail.com</a>, ou consultez notre liste de partenaires ci-dessous :</p>
-        <a href="liste-des-partners.html" class="custom-discord-button">Voir la liste des serveurs partenaires</a>
+        <button class="custom-discord-button" onclick="redirectToPartnersPage()">Voir la liste des serveurs partenaires</button>
     </div>
 
     <div class="rating-container">
@@ -127,6 +127,10 @@
     </div>
 
     <script>
+        function redirectToPartnersPage() {
+            window.location.href = "liste-des-partners.html";
+        }
+
         const ratings = document.querySelectorAll('.rating');
 
         ratings.forEach(rating => {
