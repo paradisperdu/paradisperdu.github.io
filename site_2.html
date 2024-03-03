@@ -97,24 +97,24 @@
             <div class="category">
                 <h2>Musique</h2>
                 
-                <button onclick="redirectTo('musique.html')">voir les serveurs</button>
+                <button onclick="redirectTo('musique.html')">Voir les serveurs</button>
             </div>
             <div class="category">
                 <h2>Art</h2>
                 
-                <button onclick="redirectTo('art.html')" target="_blank">voir les serveurs</button>
+                <button onclick="redirectTo('art.html')">Voir les serveurs</button>
             </div>
             <div class="category">
                 <h2>Gaming</h2>
                 
-                <button onclick="redirectTo('gaming.html')" target="_blank">voir les serveurs</button>
+                <button onclick="redirectTo('gaming.html')">Voir les serveurs</button>
             </div>
         </div>
     </div>
 
     <script>
         function redirectTo(url) {
-            window.open(url, '_blank');
+            window.location.href = url;
         }
     </script>
 </body>
