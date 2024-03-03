@@ -3,119 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des Catégories</title>
+    <title>Paradis Perdu - Serveur Discord</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #121212;
+            background-image: url('https://cdn.discordapp.com/attachments/1212855714498871316/1212855848259293244/Paradis_perdu.png?ex=65f35b07&is=65e0e607&hm=9f08e470a13d58f5730cbf42629cabcb369cf9c920fe61d21abcdf1608221de5&');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             color: #fff;
         }
-
-        h1 {
-            text-align: center;
-            margin-top: 20px;
-        }
-
         .container {
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 90%;
+            margin: 50px auto;
+            text-align: center;
             padding: 20px;
-        }
-
-        .category-wrapper {
-            background-color: rgba(34, 34, 34, 0.8);
-            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
             border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-
-        .category {
-            background-color: #222;
-            padding: 20px;
-            margin-bottom: 20px;
+        h1, p {
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        .custom-discord-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #7289DA;
+            color: #fff;
+            text-decoration: none;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-            width: 100%;
-            max-width: 400px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            transition: background-color 0.3s;
+            cursor: pointer;
+            font-size: 18px;
+            border: none;
         }
-
-        .category h2 {
+        .custom-discord-button:hover {
+            background-color: #5a68a5;
+        }
+        .section-container {
+            max-width: 90%;
+            margin: 30px auto;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            border: 2px solid #fff;
+        }
+        .section-container h2, .section-container p {
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        .section-container ul {
+            list-style-type: none;
+            padding-left: 0;
             margin-top: 0;
         }
-
-        .category p {
-            margin-bottom: 10px;
+        .section-container ul li {
+            margin-bottom: 5px;
         }
-
-        .category button {
-            padding: 8px 20px;
-            background-color: #7289DA;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
+        .discord-widget {
+            margin-top: 20px;
             border: none;
+            overflow: hidden;
+            width: 90%;
+            max-width: 350px;
+            height: 500px;
+        }
+        .rating-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: auto;
+        }
+        .rating {
+            font-size: 60px;
+            color: gold;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            line-height: 1;
+            margin: 0 10px;
         }
-
-        .category button:hover {
-            background-color: #677bc4;
+        .rating:hover,
+        .rating:hover ~ .rating {
+            color: grey;
         }
-
-        #home-button {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            padding: 8px 16px;
-            background-color: #7289DA;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            z-index: 1000;
-            transition: background-color 0.3s ease;
-        }
-
-        #home-button:hover {
-            background-color: #677bc4;
+        .partner-link {
+            color: #4CAF50;
         }
     </style>
 </head>
 <body>
-    <a href="site.html" id="home-button">Accueil</a>
-
-    <h1>Liste des Catégories</h1>
-
     <div class="container">
-        <div class="category-wrapper">
-            <div class="category">
-                <h2>Musique</h2>
-                
-                <button onclick="redirectTo('musique.html')">Voir les serveurs</button>
-            </div>
-            <div class="category">
-                <h2>Art</h2>
-                
-                <button onclick="redirectTo('art.html')">Voir les serveurs</button>
-            </div>
-            <div class="category">
-                <h2>Gaming</h2>
-                
-                <button onclick="redirectTo('gaming.html')">Voir les serveurs</button>
-            </div>
-        </div>
+        <h1>Bienvenue sur Paradis Perdu Partenariats !</h1>
+        <p>Découvrez un ensemble de communautés passionnées et engageantes.</p>
+        <a href="https://discord.gg/5JDGRcJ26z" class="custom-discord-button">Rejoindre le Serveur Discord</a>
+    </div>
+
+    <div class="section-container">
+        <h2>Bienvenue dans Paradis Perdu !</h2>
+        <p>Bienvenue dans notre communauté en pleine croissance ! Venez découvrir :</p>
+        <ul>
+            <li>L'ambiance que vous recherchez</li>
+            <li>Des nouvelles rencontres !</li>
+            <li>Un staff actif et à l'écoute de tous</li>
+            <li>Pleins de salons pour s'amuser</li>
+        </ul>
+        <iframe src="https://discord.com/widget?id=ID_DU_SERVEUR&theme=dark" frameborder="0" class="discord-widget" title="Widget Discord"></iframe>
+    </div>
+
+    <div class="section-container">
+        <h2>Devenez Partenaire</h2>
+        <p>Si vous êtes intéressé par un partenariat avec Paradis Perdu, contactez-nous à l'adresse suivante : <a href="mailto:perduparadis@gmail.com" class="partner-link">perduparadis@gmail.com</a>, ou consultez notre liste de partenaires ci-dessous :</p>
+        <a href="site_2.html" class="custom-discord-button">Voir la liste des serveurs partenaires</a>
+    </div>
+
+    <div class="rating-container">
+        <div class="rating" data-rating="1">★</div>
+        <div class="rating" data-rating="2">★</div>
+        <div class="rating" data-rating="3">★</div>
+        <div class="rating" data-rating="4">★</div>
+        <div class="rating" data-rating="5">★</div>
     </div>
 
     <script>
-        function redirectTo(url) {
-            window.location.href = url;
-        }
+        const ratings = document.querySelectorAll('.rating');
+
+        ratings.forEach(rating => {
+            rating.addEventListener('click', () => {
+                const ratingValue = parseInt(rating.getAttribute('data-rating'));
+                alert(`Vous avez évalué le serveur avec ${ratingValue} étoile(s).`);
+            });
+        });
     </script>
 </body>
 </html>
