@@ -10,22 +10,30 @@
             margin: 0;
             padding: 0;
             background-color: #f0f0f0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
+            color: #333;
             text-align: center;
         }
-        h1, p {
-            margin: 10px 0;
+        .container {
+            max-width: 600px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin-top: 0;
+        }
+        p {
+            margin-bottom: 20px;
         }
         .custom-button {
-            display: inline-block;
             padding: 10px 20px;
             background-color: #007bff;
             color: #fff;
-            text-decoration: none;
+            border: none;
             border-radius: 5px;
+            cursor: pointer;
             transition: background-color 0.3s;
         }
         .custom-button:hover {
@@ -35,7 +43,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Bienvenue sur notre site !</h1>
+        <h1>Bienvenue sur la page d'accueil</h1>
         <p>Cliquez sur le bouton ci-dessous pour accéder à la deuxième page.</p>
         <a href="site_2.html" class="custom-button">Accéder à la deuxième page</a>
     </div>
