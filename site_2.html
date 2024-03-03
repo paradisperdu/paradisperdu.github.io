@@ -3,41 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page d'accueil</title>
+    <title>Liste des Catégories</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #121212;
+            color: #fff;
         }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
         .container {
             max-width: 800px;
-            margin: 50px auto;
-            text-align: center;
+            margin: 0 auto;
+            padding: 20px;
         }
-        h1, p {
-            margin: 10px 0;
+
+        .category-wrapper {
+            background-color: rgba(34, 34, 34, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .custom-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
+
+        .category {
+            background-color: #222;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .category h2 {
+            margin-top: 0;
+        }
+
+        .category p {
+            margin-bottom: 10px;
+        }
+
+        .category button {
+            padding: 8px 20px;
+            background-color: #7289DA;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
-            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
-        .custom-button:hover {
-            background-color: #0056b3;
+
+        .category button:hover {
+            background-color: #677bc4;
+        }
+
+        #home-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 8px 16px;
+            background-color: #7289DA;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        #home-button:hover {
+            background-color: #677bc4;
         }
     </style>
 </head>
 <body>
+    <a href="site.html" id="home-button">Accueil</a>
+
+    <h1>Liste des Catégories</h1>
+
     <div class="container">
-        <h1>Bienvenue sur notre site !</h1>
-        <p>Cliquez sur le bouton ci-dessous pour accéder à la deuxième page.</p>
-        <a href="site_2.html" class="custom-button">Accéder à la deuxième page</a>
+        <div class="category-wrapper">
+            <div class="category">
+                <h2>Musique</h2>
+                
+                <button onclick="redirectTo('musique.html')">voir les serveurs</button>
+            </div>
+            <div class="category">
+                <h2>Art</h2>
+                
+                <button onclick="redirectTo('art.html')" target="_blank">voir les serveurs</button>
+            </div>
+            <div class="category">
+                <h2>Gaming</h2>
+                
+                <button onclick="redirectTo('gaming.html')" target="_blank">voir les serveurs</button>
+            </div>
+        </div>
     </div>
+
+    <script>
+        function redirectTo(url) {
+            window.open(url, '_blank');
+        }
+    </script>
 </body>
 </html>
