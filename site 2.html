@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catégorie Musique</title>
+    <title>Liste des Catégories</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,88 +13,109 @@
             color: #fff;
         }
 
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
         }
 
-        h1 {
-            text-align: center;
-            margin-top: 20px;
+        .category-wrapper {
+            background-color: rgba(34, 34, 34, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        nav {
+        .category {
             background-color: #222;
-            padding: 10px 0;
-            text-align: center;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 0 15px;
-        }
-
-        nav a:hover {
-            background-color: #7289DA;
-            border-radius: 5px;
-        }
-
-        .gray-box {
-            background-color: rgba(100, 100, 100, 0.5);
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .discord-link {
-            display: inline-block;
+        .category h2 {
+            margin-top: 0;
+        }
+
+        .category p {
+            margin-bottom: 10px;
+        }
+
+        .category button {
+            padding: 8px 20px;
             background-color: #7289DA;
             color: #fff;
             text-decoration: none;
-            padding: 10px 20px;
             border-radius: 5px;
-            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
-        .discord-link:hover {
-            background-color: #677BC4;
+        .category button:hover {
+            background-color: #677bc4;
+        }
+
+        #home-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 8px 16px;
+            background-color: #7289DA;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        #home-button:hover {
+            background-color: #677bc4;
         }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="site.html">Accueil</a>
-        <a href="art.html">Art</a>
-        <a href="gaming.html">Gaming</a>
-    </nav>
+    <a href="site.html" id="home-button">Accueil</a>
+
+    <h1>Liste des Catégories</h1>
 
     <div class="container">
-        <h1>Catégorie Musique</h1>
-
-        <div class="gray-box">
-            <h2>T&J Music</h2>
-            <p>Rejoignez-nous sur T&J Music</p>
-            <p>Êtes-vous prêt à faire vibrer vos cordes vocales ?</p>
-            <p>Notre serveur Discord est le lieu idéal pour tous les amateurs de chant et de musique !</p>
-            <p>Que vous soyez un chanteur chevronné ou que vous préfériez chanter sous la douche, il y a de la place pour tout le monde sur T&J Music.</p>
-            <p>Ce que nous offrons :</p>
-            <ul>
-                <li>Des salons vocaux dédiés pour venir chanter ou écouter les performances de nos membres.</li>
-                <li>Des concours de chant avec des récompenses incroyables.</li>
-                <li>Des soirées karaoké amusantes.</li>
-                <li>Une communauté chaleureuse et accueillante.</li>
-                <li>Des événements spéciaux tout au long de l'année.</li>
-            </ul>
-            <p>T&J Music - Où la musique et l'amitié se rencontrent !</p>
-            <a class="discord-link" href="https://discord.gg/8HxCDv7r">Rejoignez notre serveur Discord</a>
+        <div class="category-wrapper">
+            <div class="category">
+                <h2>Musique</h2>
+                
+                <button onclick="redirectTo('musique.html')">voir les serveurs</button>
+            </div>
+            <div class="category">
+                <h2>Art</h2>
+                
+                <button onclick="redirectTo('art.html')" target="_blank">voir les serveurs</button>
+            </div>
+            <div class="category">
+                <h2>Gaming</h2>
+                
+                <button onclick="redirectTo('gaming.html')" target="_blank">voir les serveurs</button>
+            </div>
         </div>
-        
-        <div class="gray-box">serveur 2</div>
-        <div class="gray-box">serveur 3</div>
-        <div class="gray-box">serveur 4</div>
-        <div class="gray-box">serveur 5</div>
     </div>
+
+    <script>
+        function redirectTo(url) {
+            window.open(url, '_blank');
+        }
+    </script>
 </body>
 </html>
