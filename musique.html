@@ -42,11 +42,12 @@
         }
 
         .gray-box {
-            background-color: rgba(100, 100, 100, 0.5);
+            background-color: rgba(100, 100, 100, 0.3); /* Modification de la transparence */
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 5px;
             position: relative; /* Ajout d'une position relative pour les contenus */
+            text-align: center; /* Centrage du texte */
         }
 
         .discord-link {
@@ -63,11 +64,12 @@
             background-color: #677BC4;
         }
 
+        /* Style pour le nombre de membres */
         .member-count {
             position: absolute;
             top: 10px; /* Ajustez la valeur selon vos préférences */
             right: 10px; /* Ajustez la valeur selon vos préférences */
-            background-color: blue;
+            background-color: #4682B4; /* Changement de couleur */
             color: #fff;
             padding: 5px 10px;
             border-radius: 10px;
@@ -83,6 +85,16 @@
                 text-shadow: 0 0 10px rgba(255,255,255,1), 0 0 20px rgba(255,255,255,0.5), 0 0 30px rgba(255,255,255,0.5);
             }
         }
+
+        /* Style pour la photo de profil */
+        .server-avatar {
+            position: absolute;
+            top: 10px; /* Ajustez la valeur selon vos préférences */
+            left: 10px; /* Ajustez la valeur selon vos préférences */
+            width: 100px; /* Deux fois plus grand */
+            height: 100px; /* Deux fois plus grand */
+            border-radius: 10px; /* Carré */
+        }
     </style>
 </head>
 <body>
@@ -96,6 +108,7 @@
         <h1>Catégorie Musique</h1>
 
         <div class="gray-box">
+            <img class="server-avatar" src="https://cdn.discordapp.com/attachments/1213414948449812490/1214190411409653770/18f18f1a69df4ef1eec18e71c81fe0bd.png?ex=65f835f0&is=65e5c0f0&hm=0250e1ddd4c3d34944e66726b7dd76dce5c810d90748cc9a5f63309211513763" alt="Photo de profil du serveur"> <!-- Ajout de la photo de profil -->
             <h2>T&J Music</h2>
             <p class="member-count">+ de 1500 membres</p> <!-- Nouvelle balise pour le nombre de membres -->
             <p>Rejoignez-nous sur T&J Music</p>
