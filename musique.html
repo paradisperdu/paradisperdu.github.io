@@ -46,6 +46,42 @@
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 5px;
+            position: relative; /* Ajout d'une position relative pour les contenus */
+        }
+
+        .discord-link {
+            display: inline-block;
+            background-color: #7289DA;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .discord-link:hover {
+            background-color: #677BC4;
+        }
+
+        .member-count {
+            position: absolute;
+            top: 10px; /* Ajustez la valeur selon vos préférences */
+            right: 10px; /* Ajustez la valeur selon vos préférences */
+            background-color: blue;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 10px;
+            text-shadow: 0 0 5px rgba(255,255,255,0.5); /* Effet de brillance */
+            animation: glow 2s infinite alternate; /* Effet lumineux */
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px rgba(255,255,255,0.5);
+            }
+            to {
+                text-shadow: 0 0 10px rgba(255,255,255,1), 0 0 20px rgba(255,255,255,0.5), 0 0 30px rgba(255,255,255,0.5);
+            }
         }
     </style>
 </head>
@@ -59,7 +95,25 @@
     <div class="container">
         <h1>Catégorie Musique</h1>
 
-        <div class="gray-box">serveur 1</div>
+        <div class="gray-box">
+            <h2>T&J Music</h2>
+            <p class="member-count">+ de 1500 membres</p> <!-- Nouvelle balise pour le nombre de membres -->
+            <p>Rejoignez-nous sur T&J Music</p>
+            <p>Êtes-vous prêt à faire vibrer vos cordes vocales ?</p>
+            <p>Notre serveur Discord est le lieu idéal pour tous les amateurs de chant et de musique !</p>
+            <p>Que vous soyez un chanteur chevronné ou que vous préfériez chanter sous la douche, il y a de la place pour tout le monde sur T&J Music.</p>
+            <p>Ce que nous offrons :</p>
+            <ul>
+                <li>Des salons vocaux dédiés pour venir chanter ou écouter les performances de nos membres.</li>
+                <li>Des concours de chant avec des récompenses incroyables.</li>
+                <li>Des soirées karaoké amusantes.</li>
+                <li>Une communauté chaleureuse et accueillante.</li>
+                <li>Des événements spéciaux tout au long de l'année.</li>
+            </ul>
+            <p>T&J Music - Où la musique et l'amitié se rencontrent !</p>
+            <a class="discord-link" href="https://discord.gg/8HxCDv7r">Rejoignez notre serveur Discord</a>
+        </div>
+        
         <div class="gray-box">serveur 2</div>
         <div class="gray-box">serveur 3</div>
         <div class="gray-box">serveur 4</div>
