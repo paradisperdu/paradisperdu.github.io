@@ -1,140 +1,441 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paradis Perdu - Serveur Discord</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('https://cdn.discordapp.com/attachments/1212855714498871316/1212855848259293244/Paradis_perdu.png?ex=65f35b07&is=65e0e607&hm=9f08e470a13d58f5730cbf42629cabcb369cf9c920fe61d21abcdf1608221de5&');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            background-color: #7289DA;
+            color: #fff;
+            padding: 20px 0;
+            width: 100%;
+            z-index: 1000;
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: right;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .section {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .section-dark {
+            background-color: #333;
             color: #fff;
         }
-        .container {
-            max-width: 90%;
-            margin: 50px auto;
-            text-align: center;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.8);
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1, p {
-            line-height: 1.6;
-            margin: 10px 0;
-        }
-        .custom-discord-button {
+
+        .btn {
             display: inline-block;
-            padding: 15px 30px;
+            padding: 10px 20px;
             background-color: #7289DA;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s;
             cursor: pointer;
-            font-size: 18px;
             border: none;
+            font-size: 16px;
         }
-        .custom-discord-button:hover {
+
+        .btn-secondary {
+            background-color: #4CAF50;
+        }
+
+        .btn:hover {
             background-color: #5a68a5;
         }
-        .section-container {
-            max-width: 90%;
-            margin: 30px auto;
-            text-align: center;
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-gap: 20px;
+            margin-top: 50px;
+        }
+
+        .feature {
+            text-align: left;
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.8);
-            border-radius: 10px;
-            border: 2px solid #fff;
-        }
-        .section-container h2, .section-container p {
-            line-height: 1.6;
-            margin: 10px 0;
-        }
-        .section-container ul {
-            list-style-type: none;
-            padding-left: 0;
-            margin-top: 0;
-        }
-        .section-container ul li {
-            margin-bottom: 5px;
-        }
-        .discord-widget {
-            margin-top: 20px;
-            border: none;
+            background-color: #424242;
+            color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
             overflow: hidden;
-            width: 90%;
-            max-width: 350px;
-            height: 500px;
+            position: relative;
         }
-        .rating-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: auto;
+
+        .feature:hover {
+            transform: translateY(-5px);
         }
-        .rating {
-            font-size: 60px;
-            color: gold;
-            cursor: pointer;
-            line-height: 1;
-            margin: 0 10px;
+
+        .feature i {
+            font-size: 36px;
+            margin-bottom: 10px;
         }
-        .rating:hover,
-        .rating:hover ~ .rating {
-            color: grey;
+
+        .feature p {
+            margin-top: 20px;
         }
+
         .partner-link {
             color: #4CAF50;
         }
+
+        .footer {
+            background-color: #7289DA;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 100px;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-gap: 20px;
+            margin-top: 50px;
+        }
+
+        .team-member img {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        .team-member h3 {
+            margin-top: 10px;
+        }
+
+        #contact {
+            background-color: #fff;
+            padding: 50px 20px;
+        }
+
+        #contact h2 {
+            margin-bottom: 30px;
+        }
+
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #contact input,
+        #contact textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        #contact input:focus,
+        #contact textarea:focus {
+            outline: none;
+            border-color: #7289DA;
+        }
+
+        #contact textarea {
+            height: 200px;
+        }
+
+        #contact button {
+            padding: 15px 40px;
+            background-color: #7289DA;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 18px;
+        }
+
+        #contact button:hover {
+            background-color: #5a68a5;
+        }
+
+        #reglement {
+            background-color: #333;
+            color: #fff;
+            padding: 50px 20px;
+            border: 2px solid #000;
+            border-radius: 10px;
+        }
+
+        #reglement h2 {
+            margin-bottom: 30px;
+        }
+
+        #reglement ol {
+            text-align: left;
+            margin-left: 40px;
+            padding-left: 0;
+        }
+
+        #reglement ol li {
+            margin-bottom: 10px;
+        }
+
+        #reglement p {
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                position: static;
+            }
+
+            .header ul {
+                display: none;
+            }
+
+            .header {
+                padding: 10px 0;
+            }
+
+            .header h1 {
+                text-align: center;
+            }
+
+            .header nav {
+                text-align: center;
+            }
+
+            .header nav ul {
+                display: block;
+            }
+
+            .header nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .section {
+                padding: 50px 0;
+            }
+
+            .team-member img {
+                max-width: 150px;
+            }
+
+            #contact form {
+                max-width: 400px;
+            }
+        }
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <h1>bienvenue sur paradis pardu partenariats !</h1>
-        <p>Découvrez un ensemble de communauté passionnée et engageante.</p>
-        <a href="https://discord.gg/5JDGRcJ26z" class="custom-discord-button">Rejoindre le Serveur Discord</a>
-    </div>
+    <header class="header">
+        <div class="container">
+            <h1>Paradis Perdu</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">À Propos</a></li>
+                    <li><a href="#features">Caractéristiques</a></li>
+                    <li><a href="#partners">Partenaires</a></li>
+                    <li><a href="#team">Équipe</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#reglement">Règlement</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <div class="section-container">
-        <h2>Bienvenue dans Paradis Perdu !</h2>
-        <p>Bienvenue dans notre communauté en pleine croissance ! Venez découvrir :</p>
-        <ul>
-            <li>L'ambiance que vous recherchez</li>
-            <li>Des nouvelles rencontres !</li>
-            <li>Un staff actif et à l'écoute de tous</li>
-            <li>Pleins de salons pour s'amuser</li>
-        </ul>
-		<iframe src="https://discord.com/widget?id=ID_DU_SERVEUR&theme=dark" frameborder="0" class="discord-widget" title="Widget Discord"></iframe>
-    </div>
+    <section id="about" class="section">
+        <div class="container">
+            <h2>Bienvenue sur Paradis Perdu !</h2>
+            <p>Découvrez une communauté passionnée et engageante où vous pourrez rencontrer de nouvelles personnes et vous amuser dans un environnement convivial.</p>
+            <a href="https://discord.gg/5JDGRcJ26z" class="btn btn-primary">Rejoindre le Serveur Discord</a>
+        </div>
+    </section>
 
-    <div class="section-container">
-        <h2>Devenez Partenaire</h2>
-        <p>Si vous êtes intéressé par un partenariat avec Paradis Perdu, contactez-nous à l'adresse suivante : <a href="mailto:perduparadis@gmail.com" class="partner-link">perduparadis@gmail.com</a>, ou consultez notre liste de partenaires ci-dessous :</p>
-        <a href="site 2.html" class="custom-discord-button">Voir la liste des serveurs partenaires</a>
-    </div>
+    <section id="features" class="section section-dark">
+        <div class="container">
+            <h2>Nos Caractéristiques</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-users"></i>
+                    <h3>Ambiance Conviviale</h3>
+                    <p>Retrouvez une ambiance chaleureuse et accueillante.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-comments"></i>
+                    <h3>Rencontres</h3>
+                    <p>Faites de nouvelles rencontres passionnantes.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-crown"></i>
+                    <h3>Équipe Dévouée</h3>
+                    <p>Notre équipe est toujours présente pour vous aider.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Salons Variés</h3>
+                    <p>Profitez de nombreux salons pour vous amuser.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Sécurité Renforcée</h3>
+                    <p>Nous veillons à la sécurité et au bien-être de nos membres.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-coffee"></i>
+                    <h3>Communauté Active</h3>
+                    <p>Rejoignez une communauté active où règne la bonne humeur.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-globe"></i>
+                    <h3>International</h3>
+                    <p>Nous accueillons des membres du monde entier.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-headset"></i>
+                    <h3>Support 24/7</h3>
+                    <p>Notre équipe de support est disponible 24 heures sur 24, 7 jours sur 7.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="rating-container">
-        <div class="rating" data-rating="1">★</div>
-        <div class="rating" data-rating="2">★</div>
-        <div class="rating" data-rating="3">★</div>
-        <div class="rating" data-rating="4">★</div>
-        <div class="rating" data-rating="5">★</div>
-    </div>
+    <section id="partners" class="section">
+        <div class="container">
+            <h2>Devenez Partenaire</h2>
+            <p>Si vous souhaitez établir un partenariat avec Paradis Perdu, veuillez nous contacter à l'adresse suivante : <a href="mailto:perduparadis@gmail.com" class="partner-link">perduparadis@gmail.com</a>. Consultez également notre liste de partenaires ci-dessous :</p>
+            <a href="partners.html" class="btn btn-secondary">Voir la Liste des Partenaires</a>
+        </div>
+    </section>
+
+    <section id="team" class="section section-dark">
+        <div class="container">
+            <h2>Notre Équipe</h2>
+            <p>Nous sommes une équipe dévouée et passionnée, toujours prête à aider nos membres.</p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="team-member1.jpg" alt="Membre de l'équipe">
+                    <h3>nom</h3>
+                    <p>Fondateur</p>
+                </div>
+                <div class="team-member">
+                    <img src="team-member2.jpg" alt="Membre de l'équipe">
+                    <h3>nom</h3>
+                    <p>Modérateur</p>
+                </div>
+                <div class="team-member">
+                    <img src="team-member3.jpg" alt="Membre de l'équipe">
+                    <h3>nom</h3>
+                    <p>Administrateur</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Nous Contacter</h2>
+            <p>Pour toute question ou préoccupation, n'hésitez pas à nous contacter :</p>
+            <form action="mailto:nigilik520@comsb.com" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Nom" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Message" required></textarea>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="reglement" class="section section-dark">
+        <div class="container">
+            <h2>Règlement de Paradis Perdu Discord</h2>
+            <div style="background-color: #111; padding: 20px; border-radius: 10px;">
+                <ol>
+                    <li>1️⃣ Respectez les autres membres : Soyez courtois, bienveillants et respectueux envers tous les membres du serveur. Pas de discrimination, d'insultes, de harcèlement ou de comportement offensant.</li>
+                    <li>2️⃣ Pas de contenu inapproprié : Évitez de partager ou de discuter du contenu adulte, offensant, illégal ou nuisible. Respectez les règles de Discord concernant le contenu NSFW.</li>
+                    <li>3️⃣ Soyez positifs et constructifs : Favorisez une atmosphère positive en encourageant les discussions amicales et constructives. Évitez les conflits inutiles et les comportements négatifs.</li>
+                    <li>4️⃣ Respectez la vie privée des autres : Ne partagez pas d'informations personnelles sans le consentement des personnes concernées. Protégez votre propre vie privée en ne divulguant pas d'informations sensibles.</li>
+                    <li>5️⃣ Pas de publicité non autorisée : N'envoyez pas de publicité non sollicitée, de liens vers des sites tiers ou de spam. Contactez les administrateurs pour toute autorisation de promotion.</li>
+                    <li>6️⃣ Suivez les instructions des modérateurs : Respectez les consignes et les décisions des modérateurs. Signalez tout comportement problématique ou toute violation des règles.</li>
+                    <li>7️⃣ Utilisez les salons appropriés : Postez dans les salons appropriés et évitez les hors-sujets. Respectez les thématiques des discussions pour une meilleure organisation.</li>
+                    <li>8️⃣ Pas de tricherie ou de piratage : N'encouragez pas la tricherie, le piratage ou toute activité illégale. Respectez les droits d'auteur et les lois en vigueur.</li>
+                </ol>
+                <p>🔒 Sanctions : Les violations répétées de ces règles peuvent entraîner des avertissements, des restrictions d'accès ou l'expulsion du serveur. Les sanctions sont appliquées à la discrétion des modérateurs.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Paradis Perdu. Tous droits réservés.</p>
+        </div>
+    </footer>
 
     <script>
-        const ratings = document.querySelectorAll('.rating');
-
-        ratings.forEach(rating => {
-            rating.addEventListener('click', () => {
-                const ratingValue = parseInt(rating.getAttribute('data-rating'));
-                alert(`Vous avez évalué le serveur avec ${ratingValue} étoile(s).`);
+        // Animation des icônes au survol
+        const features = document.querySelectorAll('.feature');
+        features.forEach(feature => {
+            feature.addEventListener('mouseover', () => {
+                feature.querySelector('i').style.animation = 'scaleIcon 0.5s ease-in-out forwards';
+            });
+            feature.addEventListener('mouseout', () => {
+                feature.querySelector('i').style.animation = '';
             });
         });
     </script>
 </body>
+
 </html>
