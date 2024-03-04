@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catégorie RP</title>
+    <title>Catégorie Communautaire</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -51,20 +51,19 @@
 </head>
 <body>
     <nav>
-        <a href="index.html">Accueil</a>
+        <a href="site.html">Accueil</a>
         <a href="musique.html">Musique</a>
         <a href="gaming.html">Gaming</a>
-        <a href="art.html">Art</a>
     </nav>
 
     <div class="container">
-        <h1>Catégorie RP</h1>
+        <h1>Catégorie Communautaire</h1>
 
-        <div class="gray-box">Serveur 1</div>
-        <div class="gray-box">Serveur 2</div>
-        <div class="gray-box">Serveur 3</div>
-        <div class="gray-box">Serveur 4</div>
-        <div class="gray-box">Serveur 5</div>
+        <div class="gray-box">Serveur Communautaire 1</div>
+        <div class="gray-box">Serveur Communautaire 2</div>
+        <div class="gray-box">Serveur Communautaire 3</div>
+        <div class="gray-box">Serveur Communautaire 4</div>
+        <div class="gray-box">Serveur Communautaire 5</div>
     </div>
 </body>
 </html>
