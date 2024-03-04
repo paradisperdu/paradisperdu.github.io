@@ -17,6 +17,7 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+            position: relative; /* Pour que les éléments positionnés à l'intérieur soient relatifs à celui-ci */
         }
 
         h1 {
@@ -42,10 +43,36 @@
         }
 
         .gray-box {
-            background-color: rgba(100, 100, 100, 0.5);
+            background-color: rgba(100, 100, 100, 0.3); /* Modification de la transparence */
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 5px;
+            position: relative; /* Ajout d'une position relative pour les contenus */
+            text-align: center; /* Centrage du texte */
+        }
+
+        .discord-link {
+            display: inline-block;
+            background-color: #7289DA;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .discord-link:hover {
+            background-color: #677BC4;
+        }
+
+        /* Style pour la photo de profil */
+        .profile-picture {
+            position: absolute;
+            top: -25px; /* Ajustement vers le haut */
+            left: -10px; /* Ajustement vers la gauche */
+            width: 100px;
+            height: 100px;
+            border-radius: 10px; /* Carré */
         }
     </style>
 </head>
@@ -59,6 +86,20 @@
     <div class="container">
         <h1>Catégorie RP</h1>
 
+        <div class="gray-box">
+            <div class="content" style="position: relative;">
+                <!-- Ajout de la photo de profil -->
+                <img class="profile-picture" src="https://cdn.discordapp.com/attachments/1212855714498871316/1214230417167884338/AOYA0ZboMyfTAAAAAElFTkSuQmCC.png?ex=65f85b32&is=65e5e632&hm=327f802fa9f460590ab68307d5dc09c3efd356fec51ea8270a30e3f54871e3f9&" alt="Photo de profil du serveur">
+                <!-- Contenu du gray-box -->
+                <p>Bonjour !<br><br><br><br><br>
+                Si tu souhaites faire partie d'un établissement scolaire RP avec un bon personnel, des bons emplois du temps, des bons potes, viens chez Jeanne d'Arc, tu sauras y trouver ta place !<br><br>
+                Un serveur en plein développement avec un PRONOTE déjà fonctionnel et une très bonne gestion !<br><br>
+                Des voyages scolaires, des animations toute l'année!<br><br>
+                Qu'est-ce que tu attends, viens nous rencontrer !!</p>
+                <a class="discord-link" href="https://discord.gg/Zr9gNAPZ">Lien vers Discord</a>
+            </div>
+        </div>
+        
         <div class="gray-box">Serveur RP 1</div>
         <div class="gray-box">Serveur RP 2</div>
         <div class="gray-box">Serveur RP 3</div>
