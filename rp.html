@@ -74,6 +74,28 @@
             height: 100px;
             border-radius: 10px; /* Carré */
         }
+
+        /* Style pour le nombre de membres */
+        .member-count {
+            position: absolute;
+            top: 10px; /* Ajustez la valeur selon vos préférences */
+            right: 10px; /* Ajustez la valeur selon vos préférences */
+            background-color: #4682B4; /* Changement de couleur */
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 10px;
+            text-shadow: 0 0 5px rgba(255,255,255,0.5); /* Effet de brillance */
+            animation: glow 2s infinite alternate; /* Effet lumineux */
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px rgba(255,255,255,0.5);
+            }
+            to {
+                text-shadow: 0 0 10px rgba(255,255,255,1), 0 0 20px rgba(255,255,255,0.5), 0 0 30px rgba(255,255,255,0.5);
+            }
+        }
     </style>
 </head>
 <body>
@@ -87,6 +109,7 @@
         <h1>Catégorie RP</h1>
 
         <div class="gray-box">
+            <div class="member-count">+40 membres</div>
             <div class="content" style="position: relative;">
                 <!-- Ajout de la photo de profil -->
                 <img class="profile-picture" src="https://cdn.discordapp.com/attachments/1212855714498871316/1214230417167884338/AOYA0ZboMyfTAAAAAElFTkSuQmCC.png?ex=65f85b32&is=65e5e632&hm=327f802fa9f460590ab68307d5dc09c3efd356fec51ea8270a30e3f54871e3f9&" alt="Photo de profil du serveur">
