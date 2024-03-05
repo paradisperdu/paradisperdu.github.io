@@ -45,7 +45,30 @@
             background-color: rgba(100, 100, 100, 0.5);
             padding: 20px;
             margin-bottom: 20px;
-            border-radius: 5px;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden; /* to clip the shadow effect */
+        }
+
+        .member-count {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #4682B4;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 10px;
+            text-shadow: 0 0 5px rgba(255,255,255,0.5); /* Effet de brillance */
+            animation: glow 2s infinite alternate; /* Effet lumineux */
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px rgba(255,255,255,0.5);
+            }
+            to {
+                text-shadow: 0 0 10px rgba(255,255,255,1), 0 0 20px rgba(255,255,255,0.5), 0 0 30px rgba(255,255,255,0.5);
+            }
         }
 
         .blue-button {
@@ -69,13 +92,13 @@
         <a href="musique.html">Musique</a>
         <a href="gaming.html">Gaming</a>
         <a href="rp.html">RP</a>
-        <a href="art.html">Art</a>
     </nav>
 
     <div class="container">
         <h1>Catégorie Communautaire</h1>
 
         <div class="gray-box">
+            <div class="member-count">+30 membres</div>
             <center>
                 <p>🔮☁️ Pandora c’est quoi? ☁️🔮</p>
                 <p>°.•꧁✧——————————————————————✧꧂•.°</p>
