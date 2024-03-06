@@ -13,15 +13,33 @@
             color: #fff;
         }
 
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
         h1 {
             text-align: center;
             margin-top: 20px;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+        nav {
+            background-color: #222;
+            padding: 10px 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 15px;
+        }
+
+        nav a:hover {
+            background-color: #7289DA;
+            border-radius: 5px;
         }
 
         .category-wrapper {
@@ -29,8 +47,8 @@
             padding: 20px;
             border-radius: 10px;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-around;
         }
 
         .category {
@@ -39,11 +57,12 @@
             margin-bottom: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-            width: 100%;
-            max-width: 400px;
+            width: calc(33% - 40px);
+            max-width: 300px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            text-align: center;
         }
 
         .category h2 {
@@ -52,6 +71,7 @@
 
         .category p {
             margin-bottom: 10px;
+            color: #ccc;
         }
 
         .category button {
@@ -69,50 +89,52 @@
             background-color: #677bc4;
         }
 
-        #home-button {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            padding: 8px 16px;
+        .blue-button {
             background-color: #7289DA;
             color: #fff;
             text-decoration: none;
+            padding: 10px 20px;
             border-radius: 5px;
-            z-index: 1000;
             transition: background-color 0.3s ease;
         }
 
-        #home-button:hover {
-            background-color: #677bc4;
+        .blue-button:hover {
+            background-color: #5c6bc0;
         }
     </style>
 </head>
 <body>
-    <a href="index.html" id="home-button">Accueil</a>
-
-    <h1>Liste des Catégories</h1>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="musique.html">Musique</a>
+        <a href="gaming.html">Gaming</a>
+        <a href="rp.html">Rp</a>
+        <a href="art.html">Art</a>
+    </nav>
 
     <div class="container">
+        <h1>Liste des Catégories</h1>
+
         <div class="category-wrapper">
             <div class="category">
                 <h2>Musique</h2>
-                <button onclick="redirectTo('musique.html')">voir les serveurs</button>
+                <button onclick="redirectTo('musique.html')">Voir les serveurs</button>
             </div>
             <div class="category">
                 <h2>Art</h2>
-                <button onclick="redirectTo('art.html')" target="_blank">voir les serveurs</button>
+                <button onclick="redirectTo('art.html')">Voir les serveurs</button>
             </div>
             <div class="category">
                 <h2>Gaming</h2>
-                <button onclick="redirectTo('gaming.html')" target="_blank">voir les serveurs</button>
+                <button onclick="redirectTo('gaming.html')">Voir les serveurs</button>
             </div>
             <div class="category">
                 <h2>RP</h2>
-                <button onclick="redirectTo('rp.html')" target="_blank">voir les serveurs</button>
+                <button onclick="redirectTo('rp.html')">Voir les serveurs</button>
             </div>
             <div class="category">
                 <h2>Communautaire</h2>
-                <button onclick="redirectTo('communautaire.html')" target="_blank">voir les serveurs</button>
+                <button onclick="redirectTo('communautaire.html')">Voir les serveurs</button>
             </div>
         </div>
     </div>
