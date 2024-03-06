@@ -50,7 +50,7 @@
         }
 
         .discord-info {
-            display: flex;
+            display: none;
             align-items: center;
             justify-content: center;
             margin-top: 20px;
@@ -67,10 +67,6 @@
             font-weight: bold;
             font-size: 18px;
         }
-
-        .discord-info.hidden {
-            display: none;
-        }
     </style>
 </head>
 
@@ -79,10 +75,10 @@
         <h1>PARADIS PERDU</h1>
         <a href="accueil.html" class="btn">Accéder au site</a>
         <br><br>
-        <a href="https://discord.gg/5JDGRcJ26z" class="btn" id="discordBtn">Se connecter à Discord</a>
+        <a href="https://discord.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=identify%20email%20guilds" class="btn">Se connecter à Discord</a>
         <div class="discord-info" id="discordInfo">
-            <img src="https://cdn.discordapp.com/avatars/123456789012345678/abcdef123456789012345678abcdef12.png" alt="Avatar">
-            <span>Utilisateur Discord</span>
+            <img src="" alt="Avatar">
+            <span></span>
         </div>
     </div>
 
@@ -91,35 +87,20 @@
         const isConnectedToDiscord = document.cookie.includes("discord_token");
 
         // Sélectionne le bouton Discord
-        const discordBtn = document.getElementById("discordBtn");
+        const discordBtn = document.querySelector(".btn[href='https://discord.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=identify%20email%20guilds']");
 
         // Sélectionne les éléments d'information Discord
         const discordInfo = document.getElementById("discordInfo");
 
-        // Si l'utilisateur est connecté à Discord, active le bouton et affiche les informations utilisateur
+        // Si l'utilisateur est connecté à Discord, affiche les informations utilisateur
         if (isConnectedToDiscord) {
-            discordBtn.removeAttribute("disabled");
-            discordInfo.classList.remove("hidden");
+            // Affiche les informations utilisateur
+            discordInfo.querySelector("img").src = "https://cdn.discordapp.com/avatars/123456789012345678/abcdef123456789012345678abcdef12.png";
+            discordInfo.querySelector("span").textContent = "Utilisateur Discord";
+            discordInfo.style.display = "flex";
+            // Désactive le bouton de connexion
+            discordBtn.style.display = "none";
         }
-
-        // Simulation de connexion à Discord lors du clic sur le bouton
-        discordBtn.addEventListener("click", function(event) {
-            event.preventDefault(); // Empêche le lien de suivre son URL par défaut
-            // Ici, vous devriez implémenter le processus de connexion à Discord
-            // Après la connexion réussie, vous pouvez mettre à jour les informations utilisateur et activer le bouton
-            // Par exemple, vous pouvez utiliser OAuth 2.0 pour gérer l'authentification avec Discord
-            // et récupérer les informations utilisateur comme l'avatar et le nom d'utilisateur
-            // Une fois que l'utilisateur est connecté avec succès, vous pouvez afficher les informations utilisateur et activer le bouton
-            const userInfo = {
-                username: "Utilisateur Discord",
-                avatar: "https://cdn.discordapp.com/avatars/123456789012345678/abcdef123456789012345678abcdef12.png"
-            };
-            // Affichage des informations utilisateur
-            discordInfo.querySelector("img").src = userInfo.avatar;
-            discordInfo.querySelector("span").textContent = userInfo.username;
-            discordInfo.classList.remove("hidden");
-            discordBtn.removeAttribute("disabled");
-        });
     </script>
 </body>
 
