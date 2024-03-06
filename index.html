@@ -13,11 +13,15 @@
             background-color: #111;
             color: #fff;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
         .container {
-            max-width: 800px;
-            margin: 100px auto;
+            max-width: 600px;
         }
 
         h1 {
@@ -32,49 +36,91 @@
             background-color: #7289DA;
             color: #fff;
             text-decoration: none;
-            border-radius: 25px;
+            border-radius: 30px;
             transition: background-color 0.3s;
             cursor: pointer;
             border: none;
-            font-size: 20px;
+            font-size: 18px;
             margin: 10px;
+            text-transform: uppercase;
         }
 
         .btn:hover {
             background-color: #5a68a5;
         }
 
-        .profile-section {
+        .discord-info {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 50px;
+            margin-top: 20px;
         }
 
-        .profile-section img {
-            width: 50px;
-            height: 50px;
+        .discord-info img {
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             margin-right: 10px;
         }
 
-        .profile-section span {
+        .discord-info span {
             font-weight: bold;
-            font-size: 20px;
+            font-size: 18px;
+        }
+
+        .discord-info.hidden {
+            display: none;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="profile-section">
-            <img src="https://via.placeholder.com/50" alt="Photo de profil">
-            <span>Utilisateur</span>
-        </div>
         <h1>PARADIS PERDU</h1>
-        <a href="accueille.html" class="btn">Accéder au site</a>
-        <a href="https://discord.gg/5JDGRcJ26z" class="btn">Se connecter à Discord</a>
+        <a href="accueil.html" class="btn">Accéder au site</a>
+        <br><br>
+        <a href="https://discord.gg/5JDGRcJ26z" class="btn" id="discordBtn">Se connecter à Discord</a>
+        <div class="discord-info" id="discordInfo">
+            <img src="https://cdn.discordapp.com/avatars/123456789012345678/abcdef123456789012345678abcdef12.png" alt="Avatar">
+            <span>Utilisateur Discord</span>
+        </div>
     </div>
+
+    <script>
+        // Vérifie si l'utilisateur est connecté à Discord
+        const isConnectedToDiscord = document.cookie.includes("discord_token");
+
+        // Sélectionne le bouton Discord
+        const discordBtn = document.getElementById("discordBtn");
+
+        // Sélectionne les éléments d'information Discord
+        const discordInfo = document.getElementById("discordInfo");
+
+        // Si l'utilisateur est connecté à Discord, active le bouton et affiche les informations utilisateur
+        if (isConnectedToDiscord) {
+            discordBtn.removeAttribute("disabled");
+            discordInfo.classList.remove("hidden");
+        }
+
+        // Simulation de connexion à Discord lors du clic sur le bouton
+        discordBtn.addEventListener("click", function(event) {
+            event.preventDefault(); // Empêche le lien de suivre son URL par défaut
+            // Ici, vous devriez implémenter le processus de connexion à Discord
+            // Après la connexion réussie, vous pouvez mettre à jour les informations utilisateur et activer le bouton
+            // Par exemple, vous pouvez utiliser OAuth 2.0 pour gérer l'authentification avec Discord
+            // et récupérer les informations utilisateur comme l'avatar et le nom d'utilisateur
+            // Une fois que l'utilisateur est connecté avec succès, vous pouvez afficher les informations utilisateur et activer le bouton
+            const userInfo = {
+                username: "Utilisateur Discord",
+                avatar: "https://cdn.discordapp.com/avatars/123456789012345678/abcdef123456789012345678abcdef12.png"
+            };
+            // Affichage des informations utilisateur
+            discordInfo.querySelector("img").src = userInfo.avatar;
+            discordInfo.querySelector("span").textContent = userInfo.username;
+            discordInfo.classList.remove("hidden");
+            discordBtn.removeAttribute("disabled");
+        });
+    </script>
 </body>
 
 </html>
