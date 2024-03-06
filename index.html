@@ -13,15 +13,11 @@
             background-color: #111;
             color: #fff;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
         }
 
         .container {
             max-width: 600px;
+            margin: 100px auto;
         }
 
         h1 {
@@ -39,33 +35,27 @@
             border-radius: 30px;
             transition: background-color 0.3s;
             cursor: pointer;
-            border: none;
-            font-size: 18px;
-            margin: 10px;
-            text-transform: uppercase;
+            border: 2px solid transparent;
+            font-size: 20px;
+            margin: 20px;
+            outline: none;
         }
 
         .btn:hover {
             background-color: #5a68a5;
         }
 
-        .discord-info {
-            display: none;
-            align-items: center;
-            justify-content: center;
-            margin-top: 20px;
+        .btn:disabled {
+            background-color: #555;
+            cursor: not-allowed;
         }
 
-        .discord-info img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 10px;
+        .btn.discord {
+            background-color: #7289DA;
         }
 
-        .discord-info span {
-            font-weight: bold;
-            font-size: 18px;
+        .btn.discord:hover {
+            background-color: #677bc4;
         }
     </style>
 </head>
@@ -73,35 +63,10 @@
 <body>
     <div class="container">
         <h1>PARADIS PERDU</h1>
-        <a href="accueil.html" class="btn">Accéder au site</a>
+        <a href="accueille.html" class="btn">Accéder au site</a>
         <br><br>
-        <a href="https://discord.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=identify%20email%20guilds" class="btn">Se connecter à Discord</a>
-        <div class="discord-info" id="discordInfo">
-            <img src="" alt="Avatar">
-            <span></span>
-        </div>
+        <a href="https://discord.gg/5JDGRcJ26z" class="btn discord">Rejoindre notre Discord</a>
     </div>
-
-    <script>
-        // Vérifie si l'utilisateur est connecté à Discord
-        const isConnectedToDiscord = document.cookie.includes("discord_token");
-
-        // Sélectionne le bouton Discord
-        const discordBtn = document.querySelector(".btn[href='https://discord.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=identify%20email%20guilds']");
-
-        // Sélectionne les éléments d'information Discord
-        const discordInfo = document.getElementById("discordInfo");
-
-        // Si l'utilisateur est connecté à Discord, affiche les informations utilisateur
-        if (isConnectedToDiscord) {
-            // Affiche les informations utilisateur
-            discordInfo.querySelector("img").src = "https://cdn.discordapp.com/avatars/123456789012345678/abcdef123456789012345678abcdef12.png";
-            discordInfo.querySelector("span").textContent = "Utilisateur Discord";
-            discordInfo.style.display = "flex";
-            // Désactive le bouton de connexion
-            discordBtn.style.display = "none";
-        }
-    </script>
 </body>
 
 </html>
