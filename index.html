@@ -16,7 +16,7 @@
         }
 
         .container {
-            max-width: 600px;
+            max-width: 800px;
             margin: 100px auto;
         }
 
@@ -28,50 +28,53 @@
 
         .btn {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 15px 30px;
             background-color: #7289DA;
             color: #fff;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 25px;
             transition: background-color 0.3s;
             cursor: pointer;
             border: none;
-            font-size: 16px;
+            font-size: 20px;
+            margin: 10px;
         }
 
         .btn:hover {
             background-color: #5a68a5;
         }
 
-        .btn:disabled {
-            background-color: #555;
-            cursor: not-allowed;
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .profile-section img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .profile-section span {
+            font-weight: bold;
+            font-size: 20px;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
+        <div class="profile-section">
+            <img src="https://via.placeholder.com/50" alt="Photo de profil">
+            <span>Utilisateur</span>
+        </div>
         <h1>PARADIS PERDU</h1>
         <a href="accueille.html" class="btn">Accéder au site</a>
-        <br><br>
-        <a href="https://discord.gg/5JDGRcJ26z" class="btn" id="discordBtn" disabled>Se connecter à Discord</a>
+        <a href="https://discord.gg/5JDGRcJ26z" class="btn">Se connecter à Discord</a>
     </div>
-
-    <script>
-        // Vérifie si l'utilisateur est connecté à Discord
-        // Dans cet exemple, nous supposons que l'utilisateur est connecté s'il a un cookie nommé "discord_token"
-        // Vous devrez peut-être ajuster cette vérification en fonction de votre méthode d'authentification
-        const isConnectedToDiscord = document.cookie.includes("discord_token");
-
-        // Sélectionne le bouton Discord
-        const discordBtn = document.getElementById("discordBtn");
-
-        // Si l'utilisateur est connecté à Discord, active le bouton
-        if (isConnectedToDiscord) {
-            discordBtn.removeAttribute("disabled");
-        }
-    </script>
 </body>
 
 </html>
