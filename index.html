@@ -1,74 +1,85 @@
 <!DOCTYPE html>
-<html lang="fr">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PARADIS PERDU - Bienvenue</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #111;
-            color: #fff;
-            text-align: center;
-        }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glassmorphism button</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #000;
+    }
 
-        .container {
-            max-width: 600px;
-            margin: 100px auto;
-        }
+    .container {
+      width: 600px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
 
-        h1 {
-            font-family: 'Garamond', serif;
-            font-size: 48px;
-            margin-bottom: 30px;
-        }
+    .container .btn {
+      position: relative;
+      width: 250px;
+      height: 50px;
+      margin: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.3); /* Fond semi-transparent noir */
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Ombre noire */
+    }
 
-        .btn {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #7289DA;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 30px;
-            transition: background-color 0.3s;
-            cursor: pointer;
-            border: 2px solid transparent;
-            font-size: 20px;
-            margin: 20px;
-            outline: none;
-        }
+    .container .btn a {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
 
-        .btn:hover {
-            background-color: #5a68a5;
-        }
+    .container .btn:hover a {
+      letter-spacing: 3px;
+    }
 
-        .btn:disabled {
-            background-color: #555;
-            cursor: not-allowed;
-        }
+    .container .btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.15);
+      transform: skewX(45deg) translateX(-100%);
+      transition: 0.5s;
+    }
 
-        .btn.discord {
-            background-color: #7289DA;
-        }
-
-        .btn.discord:hover {
-            background-color: #677bc4;
-        }
-    </style>
+    .container .btn:hover::before {
+      transform: skewX(45deg) translateX(100%);
+    }
+  </style>
 </head>
-
 <body>
-    <div class="container">
-        <h1>PARADIS PERDU</h1>
-        <a href="site 2.html" class="btn">Accéder au site</a>
-        <br><br>
-        <a href="accueille.html" class="btn">Nos info</a>
-        <br><br>
-        <a href="https://discord.gg/5JDGRcJ26z" class="btn discord">Rejoindre notre Discord</a>
+  <div class="container">
+    <div class="btn" style="background: linear-gradient(to right, #ff416c, #ff4b2b);">
+      <a href="accueille.html">Nos info</a>
     </div>
+    <div class="btn" style="background: linear-gradient(to right, #00c6ff, #0072ff);">
+      <a href="site2.html">Accéder au site</a>
+    </div>
+  </div>
 </body>
-
 </html>
